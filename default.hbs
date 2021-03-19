@@ -9,9 +9,17 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Tocbot -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.2/tocbot.min.css" />
+
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+
+    {{!-- fonts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/font.css"}}" />
+
+     <link rel="stylesheet" type="text/css" href="{{asset "built/progress.css"}}" />
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
@@ -100,6 +108,11 @@ $(document).ready(function () {
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
+
+
+{{!-- Google Analytics --}}
+{{>google-analytics}}
+
 
 </body>
 </html>

@@ -6,7 +6,7 @@ into the {body} tag of the default.hbs template --}}
 
 {{#post}}
 {{!-- Everything inside the #post block pulls data from the post --}}
-
+<progress class="reading-progress-bar"></progress>
 <article class="article {{post_class}}">
 
     <header class="article-header gh-canvas">
@@ -42,7 +42,7 @@ into the {body} tag of the default.hbs template --}}
                     <h4 class="author-name">{{authors}}</h4>
                     <div class="byline-meta-content">
                         <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time minute="Only a minute" minutes="Takes % minutes"}}</span>
                     </div>
                 </div>
             </section>
@@ -69,11 +69,9 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    {{!--
     <section class="article-comments gh-canvas">
-        If you want to embed comments, this is a good place to paste your code!
+        {{> disqus}}
     </section>
-    --}}
 
 </article>
 
@@ -115,3 +113,5 @@ into the {body} tag of the default.hbs template --}}
 </aside>
 
 {{/post}}
+
+{{>include-post}}
